@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lingo Día</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="hero">
+    <h1>Lingo Día</h1>
+    <p>A simple daily Spanish practice tool.</p>
+  </header>
+
+  <!-- LEVEL + CATEGORY SWITCHER -->
+  <div class="level-switcher">
+    <p>Choose a level:</p>
+    <div class="level-buttons" id="levelButtons"></div>
+
+    <p>Choose a category:</p>
+    <div class="category-buttons" id="categoryButtons"></div>
+
+    <p id="currentLevelText">Current: Senderos 1 • All Categories</p>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav-buttons">
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('practice')">Practice Today's Word</button>
+    <button onclick="showSection('quiz')">Quick Vocab Quiz</button>
+    <button onclick="showSection('units')">Unit Vocabulary</button>
+    <button onclick="showSection('mistakes')">Mistake Review</button>
+  </nav>
+
+  <!-- HOME / WORD OF THE DAY -->
+  <section id="home" class="section active">
+    <div class="card">
+      <h2>Word of the Day</h2>
+
+      <h3 id="dailyWord"></h3>
+
+      <p><strong>Meaning:</strong> <span id="dailyMeaning"></span></p>
+      <p><strong>Part of Speech:</strong> <span id="dailyPOS"></span></p>
+
+      <p><strong>Example:</strong></p>
+      <p id="dailyExample"></p>
+
+      <p><strong>Translation:</strong></p>
+      <p id="dailyTranslation"></p>
+
+      <p><strong>Memory Tip:</strong></p>
+      <p id="dailyTip"></p>
+
+      <div class="challenge-box">
+        <strong>Mini Challenge:</strong>
+        <p>Write your own sentence using this word.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICE TODAY'S WORD -->
+  <section id="practice" class="section">
+    <div class="card">
+      <h2>Practice Today's Word</h2>
+      <div id="practiceContent"></div>
+    </div>
+  </section>
+
+  <!-- QUICK VOCAB QUIZ -->
+  <section id="quiz" class="section">
+    <div class="card">
+      <h2>Quick Vocab Quiz</h2>
+
+      <div id="quizContainer"></div>
+
+      <button id="startQuizBtn" onclick="startQuiz()">
+        Start Quiz
+      </button>
+    </div>
+  </section>
+
+  <!-- UNIT VOCABULARY -->
+  <section id="units" class="section">
+    <div class="card">
+      <h2>Unit Vocabulary</h2>
+
+      <div id="unitButtons"></div>
+      <div id="unitWords"></div>
+    </div>
+  </section>
+
+  <!-- MISTAKE REVIEW -->
+  <section id="mistakes" class="section">
+    <div class="card">
+      <h2>Mistake Review</h2>
+
+      <div id="mistakeList"></div>
+    </div>
+  </section>
+
+  <!-- IMPORTANT: vocab.js must come before script.js -->
+  <script src="vocab.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
